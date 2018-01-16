@@ -1,33 +1,37 @@
 <template>
   <div class="projects">
     <h1 id="page-title">Projects</h1>
-    <md-card md-with-hover v-for="project in projects" :key="project.name">
-      <md-card-header>
-        <div class="md-title">{{project.name}}</div>
-        <div class="md-subhead">
-          <span v-for="(year, index) in project.years" :key="year">
-            {{(project.years.length > 1) && (index != (project.years.length - 1)) ? year + ", " : year}}
-          </span>
-        </div>
-      </md-card-header>
-      <md-card-content>
-        {{project.description}}
-      </md-card-content>
-      <md-card-actions >
-        <md-button v-if="project.codeURL" v-bind:href="project.codeURL" target="_blank" class="md-icon-button">
-          <md-icon>
-            code
-            <md-tooltip md-direction="top">View Code</md-tooltip>
-          </md-icon>
-        </md-button>
-        <md-button v-if="project.mainURL" v-bind:href="project.mainURL" target="_blank" class="md-icon-button">
-          <md-icon>
-            open_in_new
-            <md-tooltip md-direction="top">View Project</md-tooltip>
-          </md-icon>
-        </md-button>
-      </md-card-actions>
-    </md-card>
+    <div class="md-layout">
+      <div class="md-layout-item md-size-33 md-small-size-50 md-xsmall-size-100" v-for="project in projects" :key="project.name">
+        <md-card md-with-hover>
+          <md-card-header>
+            <div class="md-title">{{project.name}}</div>
+            <div class="md-subhead">
+              <span v-for="(year, index) in project.years" :key="year">
+                {{(project.years.length > 1) && (index != (project.years.length - 1)) ? year + ", " : year}}
+              </span>
+            </div>
+          </md-card-header>
+          <md-card-content>
+            {{project.description}}
+          </md-card-content>
+          <md-card-actions >
+            <md-button v-if="project.codeURL" v-bind:href="project.codeURL" target="_blank" class="md-icon-button">
+              <md-icon>
+                code
+                <md-tooltip md-direction="top">View Code</md-tooltip>
+              </md-icon>
+            </md-button>
+            <md-button v-if="project.mainURL" v-bind:href="project.mainURL" target="_blank" class="md-icon-button">
+              <md-icon>
+                open_in_new
+                <md-tooltip md-direction="top">View Project</md-tooltip>
+              </md-icon>
+            </md-button>
+          </md-card-actions>
+        </md-card>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,7 +40,6 @@ export default {
   name: 'Projects',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
       projects: [
         {
           name: 'Audium',
@@ -77,11 +80,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-
 .md-card {
-  width: 400px;
   margin: 4px;
-  display: inline-block;
   vertical-align: top;
 }
 </style>

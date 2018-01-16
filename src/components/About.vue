@@ -13,16 +13,14 @@
       </div>
       <div class="md-layout-item">
         <div class="md-layout md-alignment-top-center">
-          <div class="content">
-            <div class="content__container">
-              <p class="content__container__text">Hello,</p>
-              <ul class="content__container__list">
-                <li class="content__container__list__item">world!</li>
-                <li class="content__container__list__item">from New York!</li>
-                <li class="content__container__list__item">users!</li>
-                <li class="content__container__list__item">everybody!</li>
+          <div id="hello">
+              <p>Hello,</p>
+              <ul>
+                <li>world!</li>
+                <li>from New York!</li>
+                <li>users!</li>
+                <li>everybody!</li>
               </ul>
-            </div>
           </div>
           <p id="bio">
             My name is Shahryar and I've recently graduated with a degree in Computer Science from Stony Brook University.<br><br>
@@ -61,69 +59,65 @@ export default {
   line-height: 25px;
 }
 // hello world styles
-.content {
+#hello {
   overflow: hidden;
   position: absolute;
   font-size: 35px;
   line-height: 40px;
-  
-  &__container {
-    font-weight: 100;
-    overflow: hidden;
-    height: 40px;
-    padding: 0 30px;
+  font-weight: 100;
+  overflow: hidden;
+  height: 40px;
+  padding: 0 25px;
 
-    &:before {
-      content: '{';
-      left: 0;
-    }
+  &:before {
+    content: '{';
+    left: 0;
+  }
 
-    &:after {
-      content: '}';
-            position: absolute;
+  &:after {
+    content: '}';
+    position: absolute;
+    right: 0;
+  }
 
-      right: 0;
-    }
+  &:after, &:before {
+    position: absolute;
+    top: 0;
 
-    &:after, &:before {
-      position: absolute;
-      top: 0;
-      
-      color:#18FFFF;
-      font-size: 42px;
-      line-height: 40px;
-      
-      -webkit-animation-name: opacity;
-      -webkit-animation-duration: 2s;
-      -webkit-animation-iteration-count: infinite;
-      animation-name: opacity;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-    }
+    color:#18FFFF;
+    font-size: 42px;
+    line-height: 40px;
+    
+    -webkit-animation-name: opacity;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
 
-    &__text {
-      display: inline;
-      float: left;
+  p {
+    display: inline;
+    float: left;
+    margin: 0;
+  }
+
+  ul {
+    margin-top: 0;
+    padding-left: 90px;
+    text-align: left;
+    list-style: none;
+    
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+    li {
+      line-height:40px;
       margin: 0;
-    }
-
-    &__list {
-      margin-top: 0;
-      padding-left: 90px;
-      text-align: left;
-      list-style: none;
-      
-      -webkit-animation-name: change;
-      -webkit-animation-duration: 10s;
-      -webkit-animation-iteration-count: infinite;
-      animation-name: change;
-      animation-duration: 10s;
-      animation-iteration-count: infinite;
-
-      &__item {
-        line-height:40px;
-        margin:0;
-      }
     }
   }
 }
