@@ -8,11 +8,17 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      meta: {
+        transitionName: 'slide-right'
+      },
       path: '/',
       name: 'About',
       component: About
     },
     {
+      meta: {
+        transitionName: 'slide-left'
+      },
       path: '/projects',
       name: 'Projects',
       component: Projects

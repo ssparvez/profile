@@ -15,47 +15,46 @@
         </div>
       </md-app-toolbar>
       <md-app-content>
-        <transition name="slide-fade" mode="out-in">
+        <transition :name="transitionName" mode="out-in">
           <router-view/>
         </transition>
       </md-app-content>
     </md-app>
-    <!--<footer style="height: 5vh; background-color: #18FFFF; color: black;">THIS IS MY FOOT</footer>-->
-    <footer>
-      <md-speed-dial md-direction="top" class="md-bottom-right md-xsmall-hide md-small-hide">
-        <md-speed-dial-target class="md-primary">
-          <md-icon>reply</md-icon>
-          <md-tooltip md-direction="left"><b>Let's connect!</b></md-tooltip>
-        </md-speed-dial-target>
-
-        <md-speed-dial-content>
-          <md-button class="md-icon-button" href="https://www.linkedin.com/in/syed-shahryar-parvez-560b6a93" target="_blank">
-            <img src="./assets/images/LinkedIn.png">
-            <md-tooltip md-direction="left">LinkedIn</md-tooltip>
-          </md-button>
-          <md-button class="md-icon-button" href="https://github.com/ssparvez" target="_blank">
-            <img src="./assets/images/GitHub.png">
-            <md-tooltip md-direction="left">GitHub</md-tooltip>
-          </md-button>
-
-          <md-button class="md-icon-button" href="mailto:shhrrparvez@gmail.com">
-            <md-icon>mail</md-icon>
-            <md-tooltip md-direction="left">Email</md-tooltip>
-          </md-button>
-        </md-speed-dial-content>
-      </md-speed-dial>
-      <!-- <div style="text-align: center">
-          <a href="https://github.com/ssparvez"><img src="./assets/images/GitHub.png" height="30" width="30" style="margin-right: 30px;"></a>
-          <a href="https://www.linkedin.com/in/syed-shahryar-parvez-560b6a93"><img src="./assets/images/LinkedIn.png" height="30" width="33" style="margin-left: 30px;"></a>
-      </div> -->
-      </footer>
+    <md-speed-dial md-direction="top" class="md-bottom-right md-xsmall-hide md-small-hide">
+      <md-speed-dial-target class="md-primary">
+        <md-icon>reply</md-icon>
+        <md-tooltip md-direction="left"><b>Let's connect!</b></md-tooltip>
+      </md-speed-dial-target>
+      <md-speed-dial-content>
+        <md-button class="md-icon-button" href="https://www.linkedin.com/in/syed-shahryar-parvez-560b6a93" target="_blank">
+          <img src="./assets/images/LinkedIn.png">
+          <md-tooltip md-direction="left">LinkedIn</md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button" href="https://github.com/ssparvez" target="_blank">
+          <img src="./assets/images/GitHub.png">
+          <md-tooltip md-direction="left">GitHub</md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button" href="mailto:shhrrparvez@gmail.com">
+          <md-icon>mail</md-icon>
+          <md-tooltip md-direction="left">Email</md-tooltip>
+        </md-button>
+      </md-speed-dial-content>
+    </md-speed-dial>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'app'
+  name: 'app',
+  data: () => ({
+    transitionName: 'slide-left' // default
+  }),
+  // watch the `$route` to determine the transition to use
+  watch: {
+    '$route' (to) {
+      this.transitionName = to.meta.transitionName
+    }
+  }
 }
 </script>
 
@@ -86,20 +85,32 @@ export default {
 
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all .8s ease;
-}
-.slide-fade-leave-active {
-  transition: all .3s ease;
-}
-.slide-fade-enter 
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(100vw);
+.slide-left, .slide-right {
+  &-enter-active {
+    transition: all .8s ease;
+  }
+  &-leave-active {
+    transition: all .3s ease;
+  }
 }
 
-.slide-fade-leave-to {
-  transform: translateX(-100vw);
+.slide-left {
+  &-enter {
+    transform: translateX(100vw);
 
+  }
+  &-leave-to {
+    transform: translateX(-100vw);
+  }
 }
 
+.slide-right {
+  &-enter {
+    transform: translateX(-100vw);
+
+  }
+  &-leave-to {
+    transform: translateX(100vw);
+  }
+}
 </style>
