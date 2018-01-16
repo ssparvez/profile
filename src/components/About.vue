@@ -6,7 +6,7 @@
         <md-card>
           <md-card-media-cover md-solid>
             <md-card-media md-ratio="1:1">
-              <img src="../assets/images/me.jpg" alt="Skyscraper">
+              <img src="../assets/images/me.jpg">
             </md-card-media>
           </md-card-media-cover>
         </md-card>
