@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <md-app md-mode="fixed-last">
+    <md-app md-mode="fixed">
       <md-app-toolbar class="md-primary md-elevation-5">
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
@@ -24,7 +24,6 @@
       <md-speed-dial-target class="md-primary">
         <md-icon class="md-morph-initial">expand_more</md-icon>
         <md-icon class="md-morph-final">expand_less</md-icon>
-        <md-tooltip md-direction="left"><b>Let's connect!</b></md-tooltip>
       </md-speed-dial-target>
       <md-speed-dial-content>
         <md-button class="md-icon-button" href="https://www.linkedin.com/in/syed-shahryar-parvez-560b6a93" target="_blank">
