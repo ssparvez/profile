@@ -45,6 +45,7 @@ export default {
           name: 'Audium',
           years: [2017],
           mainURL: 'http://app.audium.io.s3-website.us-east-2.amazonaws.com/',
+          codeURL: 'https://github.com/ssparvez/AudiumFrontEnd',
           description: 'Built a full-stack web application based on Spotify. It uses Angular 4 on the front end, with a backend REST API built using the Spring Boot framework and interfaces with a MySQL database instance using JPA.'
         },
         {
