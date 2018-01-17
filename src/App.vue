@@ -22,7 +22,8 @@
     </md-app>
     <md-speed-dial md-direction="top" class="md-bottom-right md-xsmall-hide md-small-hide">
       <md-speed-dial-target class="md-primary">
-        <md-icon>reply</md-icon>
+        <md-icon class="md-morph-initial">expand_more</md-icon>
+        <md-icon class="md-morph-final">expand_less</md-icon>
         <md-tooltip md-direction="left"><b>Let's connect!</b></md-tooltip>
       </md-speed-dial-target>
       <md-speed-dial-content>
