@@ -51,15 +51,15 @@ export default {
         {
           name: 'GeometricVR',
           years: [2017],
-          mainURL: 'https://ssparvez.github.io/323site/',
-          codeURL: 'https://github.com/ssparvez/GeometricVR',
+          mainURL: 'https://ssparvez.github.io/geometric-vr-site/',
+          codeURL: 'https://github.com/ssparvez/geometric-vr',
           description: 'Built a virtual reality app that visualizes 3D shapes for iOS/Android. It was created in the Unity3D environment with the GoogleVR SDK and behavior scripts written in C#'
         },
         {
           name: 'Premier League Data Visualization',
           years: [2016],
-          mainURL: 'https://ssparvez.github.io/Premier-League-Data/',
-          codeURL: 'https://github.com/ssparvez/Premier-League-Data',
+          mainURL: 'https://ssparvez.github.io/premier-league-data/',
+          codeURL: 'https://github.com/ssparvez/premier-league-data',
           description: 'Built an interactive website that visualized a soccer data set with D3.js and Materialize for the front-end design.'
         },
         {
