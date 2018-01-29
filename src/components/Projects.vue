@@ -14,6 +14,13 @@
           </md-card-header>
           <md-card-content>
             {{project.description}}
+            <div v-if="project.name == 'Audium'" class="md-caption" style="margin-top: 10px;">
+              *You can create your own account or use a demo user: 
+              <ul style="margin: 0px;">
+                <li>user: <em>johndoe</em></li>
+                <li>password: <em>password</em></li>
+              </ul>
+            </div>
           </md-card-content>
           <md-card-actions >
             <md-button v-if="project.codeURL" v-bind:href="project.codeURL" target="_blank" class="md-icon-button">
