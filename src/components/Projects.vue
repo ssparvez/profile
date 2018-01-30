@@ -58,7 +58,7 @@ export default {
         {
           name: 'GeometricVR',
           years: [2017],
-          mainURL: 'https://ssparvez.github.io/geometric-vr-site/',
+          mainURL: 'https://drive.google.com/file/d/1b6D29qBMbOsCPq_k_hg5pFzTj9bmwRWF/view?usp=sharing',
           codeURL: 'https://github.com/ssparvez/geometric-vr',
           description: 'Built a virtual reality app that visualizes 3D shapes for iOS/Android. It was created in the Unity3D environment with the GoogleVR SDK and behavior scripts written in C#'
         },
