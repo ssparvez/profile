@@ -56,6 +56,12 @@ export default {
           description: 'Built a full-stack web application based on Spotify. It uses Angular 4 on the front end, with a backend REST API built using the Spring Boot framework and interfaces with a MySQL database instance using JPA.'
         },
         {
+          name: 'Cryptofy',
+          years: [2018],
+          codeURL: 'https://github.com/ssparvez/cryptofy',
+          description: 'Currently building a hybrid web/mobile app that tracks the current prices and latest news on the top cryptocurrencies using the coinmarketcap API. It uses the Ionic Framework with Angular on the frontend and Firebase on the backend.'
+        },
+        {
           name: 'GeometricVR',
           years: [2017],
           mainURL: 'https://drive.google.com/file/d/1b6D29qBMbOsCPq_k_hg5pFzTj9bmwRWF/view?usp=sharing',
