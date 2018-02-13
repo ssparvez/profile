@@ -3,7 +3,7 @@
     <h1 id="page-title">Projects</h1>
     <div class="md-layout">
       <div class="md-layout-item md-size-33 md-small-size-50 md-xsmall-size-100" v-for="project in projects" :key="project.name">
-        <md-card md-with-hover>
+        <md-card md-with-hover style="cursor: default;">
           <md-card-header>
             <div class="md-title">{{project.name}}</div>
             <div class="md-subhead">
