@@ -23,13 +23,13 @@
             </div>
           </md-card-content>
           <md-card-actions >
-            <md-button v-if="project.codeURL" v-bind:href="project.codeURL" target="_blank" class="md-icon-button">
-              <md-icon>
+            <md-button v-if="project.codeURL" v-bind:href="project.codeURL" target="_blank" class="md-icon-button md-accent">
+              <md-icon class="md-accent">
                 code
                 <md-tooltip md-direction="top">View Code</md-tooltip>
               </md-icon>
             </md-button>
-            <md-button v-if="project.mainURL" v-bind:href="project.mainURL" target="_blank" class="md-icon-button">
+            <md-button v-if="project.mainURL" v-bind:href="project.mainURL" target="_blank" class="md-icon-button md-accent">
               <md-icon>
                 open_in_new
                 <md-tooltip md-direction="top">View Project</md-tooltip>
@@ -49,17 +49,18 @@ export default {
     return {
       projects: [
         {
-          name: 'Audium',
-          years: [2017],
-          mainURL: 'http://app.audium.io.s3-website.us-east-2.amazonaws.com/',
-          codeURL: 'https://github.com/ssparvez/AudiumFrontEnd',
-          description: 'Built a full-stack web application based on Spotify. It uses Angular 4 on the front end, with a backend REST API built using the Spring Boot framework and interfaces with a MySQL database instance using JPA.'
-        },
-        {
           name: 'Cryptofy',
           years: [2018],
           codeURL: 'https://github.com/ssparvez/cryptofy',
           description: 'Currently building a hybrid web/mobile app that tracks the current prices and latest news on the top cryptocurrencies using the coinmarketcap API. It uses the Ionic Framework with Angular on the frontend and Firebase on the backend.'
+        },
+        {
+          name: 'Audium',
+          years: [2017],
+          image: 'assets/images/audium.png',
+          mainURL: 'http://app.audium.io.s3-website.us-east-2.amazonaws.com/',
+          codeURL: 'https://github.com/ssparvez/AudiumFrontEnd',
+          description: 'Built a full-stack web application based on Spotify. It uses Angular 4 on the front end, with a backend REST API built using the Spring Boot framework and interfaces with a MySQL database instance using JPA.'
         },
         {
           name: 'GeometricVR',
