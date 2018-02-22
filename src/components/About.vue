@@ -57,6 +57,7 @@ export default {
   text-align: center; 
   font-size: 16px; 
   line-height: 25px;
+  font-weight: 500;
 }
 // hello world styles
 #hello {
@@ -98,7 +99,6 @@ export default {
 
   p {
     display: inline;
-    float: left;
     margin: 0;
   }
 
