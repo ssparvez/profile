@@ -21,7 +21,6 @@ export default new Router({
         transitionName: 'slide-left'
       },
       path: '/projects',
-      alias: '/',
       name: 'Projects',
       component: Projects
     }
