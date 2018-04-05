@@ -68,7 +68,7 @@ export default {
   font-weight: 100;
   overflow: hidden;
   height: 40px;
-  padding: 0 25px;
+  padding: 0 25px;  
 
   &:before {
     content: '{';
