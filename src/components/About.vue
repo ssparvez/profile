@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <h1 id="page-title">About Me</h1>
-    <div class="md-layout">
+    <div class="md-layout md-gutter">
       <div class="md-layout-item md-size-33 md-xsmall-size-100 md-small-size-50">
         <md-card>
           <md-card-media-cover md-solid>
