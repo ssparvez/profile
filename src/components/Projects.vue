@@ -57,6 +57,7 @@ export default {
           name: 'Cryptofy',
           years: [2018],
           image: 'cryptofy.jpg',
+          mainURL: 'https://ssparvez.github.io/cryptofy/',
           codeURL: 'https://github.com/ssparvez/cryptofy',
           description: 'Currently building a hybrid web/mobile app that tracks the current prices and latest news on the top cryptocurrencies using the coinmarketcap API. It uses the Ionic Framework with Angular on the frontend and Firebase on the backend.'
         },
