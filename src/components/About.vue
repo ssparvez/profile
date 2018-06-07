@@ -25,12 +25,16 @@
             </div>
             <span>}</span>
           </div>
-          <p id="bio">
-            My name is Shahryar and I've recently graduated with a degree in Computer Science from Stony Brook University.<br><br>
-            On the programming side, I'm always looking to learn something new. My core language is Java but I'm also well versed in Python and C as well. I also enjoy learning and working with modern frameworks such as Angular, Vue.js and Spring.<br><br>
-            On the personal side, I grew up in London and moved to New York in 2006. I follow Liverpool FC (I don't miss a single game) as well as any new tech, all while jamming out to Tame Impala.
-          </p>
-          <md-button v-bind:href="resume" target="_blank" class="md-accent md-raised">View Resume</md-button>
+          <div id="bio">
+            <strong>Designer</strong>, <strong>Developer</strong>, and <strong>Tech Enthusiast</strong> <br />
+            Studied <strong>Computer Science</strong> at <strong>Stony Brook University</strong> <br />
+            Proficient in <strong>Java</strong>, <strong>Python</strong>, <strong>C</strong>, and Klingon <br />
+            Experience with <strong>Angular</strong> and <strong>Spring Boot</strong> <br/><br/>
+            - Also - <br/><br/>
+            Former Londoner and current New Yorker<br />
+            Always supporting Liverpool FC and jamming to Tame Impala. <br /><br />
+            <md-button v-bind:href="resume" target="_blank" class="md-accent md-raised">View Resume</md-button>
+          </div>
         </div>
       </div>
     </div>  
@@ -57,22 +61,21 @@ export default {
 }
 
 #bio {
-  margin-top: 70px; 
+  margin-top: 50px; 
   text-align: center; 
-  font-size: 16px; 
-  line-height: 25px;
-  font-weight: 500;
+  font-size: 20px; 
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 // hello world styles
 #hello {
-  font-size: 35px;
+  font-size: 36px;
   font-weight: 100;
-  
 
   div {
     vertical-align: middle;
     overflow: hidden;
-    padding: 0 10px;    
     line-height: 40px;
     height: 40px;
     display: inline-grid;
@@ -84,7 +87,7 @@ export default {
 
     ul {
       margin-top: 0;
-      padding-left: 100px;
+      padding-left: 120px;
       text-align: left;
       list-style: none;
       
@@ -123,12 +126,12 @@ export default {
 }
 
 @include keyframes(change) {
-  0%, 12.66%, 100% { transform: translate3d(0,0,0); }
-  16.66%, 29.32% { transform: translate3d(0,-25%,0); }
-  33.32%,45.98% { transform: translate3d(0,-50%,0); }
-  49.98%,62.64% { transform: translate3d(0,-75%,0); }
-  66.64%,79.3% { transform: translate3d(0,-50%,0); }
-  83.3%,95.96% { transform: translate3d(0,-25%,0); }
+  0%, 12.66%, 100% { transform: translate3d(0,-25%,0); }
+  16.66%, 29.32% { transform: translate3d(0,-50%,0); }
+  33.32%,45.98% { transform: translate3d(0,-75%,0); }
+  49.98%,62.64% { transform: translate3d(0,-100%,0); }
+  66.64%,79.3% { transform: translate3d(0,-75%,0); }
+  83.3%,95.96% { transform: translate3d(0,-50%,0); }
 }
 
 // 6 is the number of animation.
