@@ -51,9 +51,7 @@ export default {
   }),
   // watch the `$route` to determine the transition to use
   watch: {
-    '$route' (to) {
-      this.transitionName = to.meta.transitionName
-    }
+    '$route' (to) { this.transitionName = to.meta.transitionName }
   }
 }
 </script>
@@ -70,9 +68,7 @@ export default {
 
 @import "~vue-material/dist/theme/all"; // Apply the theme
 
-#app {
-  font-family: 'Raleway';
-}
+#app { font-family: 'Raleway'; }
 
 #page-title {
   margin-left: 16px; 
@@ -80,18 +76,18 @@ export default {
   font-size: 40px;
 }
 
-.md-app {
-  min-height: 100vh;
-}
+.md-app { min-height: 100vh; }
 
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-left, .slide-right {
   &-enter-active {
-    transition: all 1.5s ease;
+    transition: all 1s ease;
+    will-change: all;
   }
   &-leave-active {
     transition: all .5s ease;
+    will-change: all;
   }
 }
 

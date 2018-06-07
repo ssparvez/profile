@@ -32,7 +32,7 @@
             Experience with <strong>Angular</strong> and <strong>Spring Boot</strong> <br/><br/>
             - Also - <br/><br/>
             Former Londoner and current New Yorker<br />
-            Always supporting Liverpool FC and jamming to Tame Impala. <br /><br />
+            Always supporting Liverpool FC and jamming to Tame Impala<br /><br />
             <md-button v-bind:href="resume" target="_blank" class="md-accent md-raised">View Resume</md-button>
           </div>
         </div>
@@ -43,7 +43,6 @@
 
 <script>
 // eslint-disable-next-line
-//var sfdf = require('../assets/js/waves.js');
 export default {
   name: 'About',
   data () {
