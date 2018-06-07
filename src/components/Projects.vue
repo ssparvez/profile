@@ -1,6 +1,5 @@
 <template>
   <div class="projects">
-    <h1 id="page-title">Projects</h1>
     <div class="md-layout">
       <div class="md-layout-item md-size-33 md-small-size-50 md-xsmall-size-100" v-for="project in projects" :key="project.name">
         <md-card md-with-hover style="cursor: default;">
@@ -59,7 +58,7 @@ export default {
           image: 'cryptofy.jpg',
           mainURL: 'https://ssparvez.github.io/cryptofy/',
           codeURL: 'https://github.com/ssparvez/cryptofy',
-          description: 'Currently building a hybrid web/mobile app that tracks the current prices and latest news on the top cryptocurrencies using the coinmarketcap API. It uses the Ionic Framework with Angular on the frontend and Firebase on the backend.'
+          description: 'A mobile app that tracks the current prices and latest news on the top cryptocurrencies using the coinmarketcap API. It uses the Ionic Framework with Angular on the frontend and Firebase on the backend.'
         },
         {
           name: 'Audium',
@@ -67,7 +66,7 @@ export default {
           image: 'audium.png',
           mainURL: 'http://app.audium.io.s3-website.us-east-2.amazonaws.com/',
           codeURL: 'https://github.com/ssparvez/AudiumFrontEnd',
-          description: 'Built a full-stack web application based on Spotify. It uses Angular 4, a Spring Boot REST API and a MySQL database.'
+          description: 'A full-stack web application based on Spotify. It uses Angular 4, a Spring Boot REST API and a MySQL database.'
         },
         {
           name: 'GeometricVR',
@@ -75,7 +74,7 @@ export default {
           image: 'geometricvr.png',
           mainURL: 'https://drive.google.com/file/d/1b6D29qBMbOsCPq_k_hg5pFzTj9bmwRWF/view?usp=sharing',
           codeURL: 'https://github.com/ssparvez/geometric-vr',
-          description: 'Built a virtual reality app that visualizes 3D shapes for iOS/Android. It was created in the Unity3D environment with the GoogleVR SDK and behavior scripts written in C#'
+          description: 'A virtual reality app that visualizes 3D shapes for iOS/Android. Created in the Unity3D environment with the GoogleVR SDK and behavior scripts written in C#'
         },
         {
           name: 'Premier League Data Visualization',
@@ -83,7 +82,7 @@ export default {
           image: 'pldata.png',
           mainURL: 'https://ssparvez.github.io/premier-league-data/',
           codeURL: 'https://github.com/ssparvez/premier-league-data',
-          description: 'Built an interactive website that visualized a soccer data set with D3.js and Materialize for the front-end design.'
+          description: 'An interactive website that visualizes a soccer data set with D3.js and Materialize for the front-end design.'
         },
         {
           name: 'Robot Arm',

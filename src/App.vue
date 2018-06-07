@@ -16,13 +16,10 @@
       </md-app-toolbar>
       <md-app-content>
         <transition :name="transitionName" mode="out-in">
-          <router-view/>
+          <router-view style="margin-top: 50px;"/>
         </transition>
       </md-app-content>
     </md-app>
-    <footer>      
-      <span class="md-caption">Built with <a style="color: #47b784;" href="https://vuejs.org/">Vue.js</a></span>
-    </footer>
     <md-speed-dial md-direction="top" class="md-bottom-right md-fixed">
       <md-speed-dial-target class="md-primary">
         <md-icon class="md-morph-initial">expand_more</md-icon>
@@ -73,19 +70,8 @@ export default {
 
 @import "~vue-material/dist/theme/all"; // Apply the theme
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 100px; /* Vertically center the text there */
-    text-align: center;
-    span {
-      a {
-        color: #47b784;
-      }
-    }
+#app {
+  font-family: 'Raleway';
 }
 
 #page-title {
@@ -102,10 +88,10 @@ footer {
 /* durations and timing functions.              */
 .slide-left, .slide-right {
   &-enter-active {
-    transition: all .8s ease;
+    transition: all 1.5s ease;
   }
   &-leave-active {
-    transition: all .3s ease;
+    transition: all .5s ease;
   }
 }
 
