@@ -68,7 +68,7 @@ export default {
 }
 // hello world styles
 #hello {
-  font-size: 36px;
+  font-size: 33px;
   font-weight: 100;
 
   div {
@@ -85,7 +85,7 @@ export default {
 
     ul {
       margin-top: 0;
-      padding-left: 120px;
+      padding-left: 100px;
       text-align: left;
       list-style: none;
       
