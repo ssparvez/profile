@@ -19,7 +19,6 @@
                 <ul>
                   <li>world!</li>
                   <li>from New York!</li>
-                  <li>users!</li>
                   <li>everybody!</li>
                 </ul>
             </div>
@@ -125,29 +124,24 @@ export default {
 }
 
 @include keyframes(change) {
-  0%, 12.66%, 100% { transform: translate3d(0,-25%,0); }
-  16.66%, 29.32% { transform: translate3d(0,-50%,0); }
-  33.32%,45.98% { transform: translate3d(0,-75%,0); }
-  49.98%,62.64% { transform: translate3d(0,-100%,0); }
-  66.64%,79.3% { transform: translate3d(0,-75%,0); }
-  83.3%,95.96% { transform: translate3d(0,-50%,0); }
+  0%, 22%, 100% { transform: translate3d(0,-33.33%,0); }
+  25%, 47% { transform: translate3d(0,-66.67%,0); }
+  50%, 72% { transform: translate3d(0,-99.99%,0); }
+  75%,97% { transform: translate3d(0,-66.67%,0); }
 }
 
-// 6 is the number of animation.
-// Here, there are 4 lines :
+// 4 is the number of animation, there are 3 lines :
 
 // 1 to 2
 // 2 to 3
-// 3 to 4
-// 4 to 3
 // 3 to 2
 // 2 to 1
 
-// 6x + 6y = 100 (100% duration)
+// 4x + 4y = 100 (100% duration)
 
 // HERE : 
-// y = 4 -> Animation between two lines
-// x = 12.66 -> Time spent on a line
+// y = 3 -> Animation between two lines
+// x = 22 -> Time spent on a line
 
 // You can define a value and calculate the other if you want change speed or the number of lines
 

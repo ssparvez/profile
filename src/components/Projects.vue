@@ -4,7 +4,7 @@
       <div class="md-layout-item md-size-33 md-small-size-50 md-xsmall-size-100" v-for="project in projects" :key="project.name">
         <md-card md-with-hover style="cursor: default;">
           <md-card-header>
-            <div class="md-title" style="font-weight: 500;">{{project.name}}</div>
+            <div class="md-title" style="font-weight: 500;"><a :href="project.mainURL" target="_blank">{{project.name}}</a></div>
             <div class="md-subhead" style="font-weight: 600;">
               <span v-for="(year, index) in project.years" :key="year">
                 {{(project.years.length > 1) && (index != (project.years.length - 1)) ? year + ", " : year}}
@@ -12,7 +12,7 @@
             </div>
           </md-card-header>
           <md-card-media v-if="project.image" md-ratio="16:9">
-            <img v-bind:src="'../static/images/' + project.image">
+            <img v-bind:src="'../static/images/' + project.image" alt="Project Image">
           </md-card-media>
           <md-card-media v-if="project.video">
             <iframe style="width: 560px; height: 220px;" v-bind:src="project.video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -27,13 +27,13 @@
             </div>
           </md-card-content>
           <md-card-actions>
-            <md-button v-if="project.codeURL" v-bind:href="project.codeURL" target="_blank" class="md-icon-button md-accent">
+            <md-button v-if="project.codeURL" :href="project.codeURL" target="_blank" class="md-icon-button md-accent">
               <md-icon class="md-accent">
                 code
                 <md-tooltip md-direction="top">View Code</md-tooltip>
               </md-icon>
             </md-button>
-            <md-button v-if="project.mainURL" v-bind:href="project.mainURL" target="_blank" class="md-icon-button md-accent">
+            <md-button v-if="project.mainURL" :href="project.mainURL" target="_blank" class="md-icon-button md-accent">
               <md-icon>
                 open_in_new
                 <md-tooltip md-direction="top">View Project</md-tooltip>
@@ -66,7 +66,7 @@ export default {
           image: 'audium.png',
           mainURL: 'http://app.audium.io.s3-website.us-east-2.amazonaws.com/',
           codeURL: 'https://github.com/ssparvez/AudiumFrontEnd',
-          description: 'A full-stack web application based on Spotify. It uses Angular 4, a Spring Boot REST API and a MySQL database.'
+          description: 'A full-stack web application based on Spotify. It uses Angular 4, Spring Boot and MySQL.'
         },
         {
           name: 'GeometricVR',
@@ -77,7 +77,7 @@ export default {
           description: 'A virtual reality app that visualizes 3D shapes for iOS/Android. Created in the Unity3D environment with the GoogleVR SDK and behavior scripts written in C#'
         },
         {
-          name: 'Premier League Data Visualization',
+          name: 'PL Data Visualization',
           years: [2016],
           image: 'pldata.png',
           mainURL: 'https://ssparvez.github.io/premier-league-data/',
@@ -94,6 +94,7 @@ export default {
         {
           name: 'Supplemental Security Income',
           years: [2015],
+          mainURL: 'http://www.suffolkcountyny.gov/Departments/SocialServices.aspx',
           description: 'Worked on converting a database built in Microsoft Access to SQL Server with Visual Basic .NET for the Suffolk County Dept. of Social Services.'
         }
       ]
@@ -108,4 +109,6 @@ export default {
   vertical-align: top;
   margin: 4px;
 }
+
+a { color: white !important; }
 </style>
