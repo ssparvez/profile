@@ -7,12 +7,8 @@
             <span class="md-title" @click="scrollMeTo('hello')">Shahryar Parvez</span>
           </div>
           <div class="md-toolbar-section-end">
-            <md-tabs class="md-primary" :md-active-tab="activeTab">
-            <!--<md-tab id="tab-about" md-label="About Me" to="/"></md-tab>
-            <md-tab id="tab-projects" md-label="Projects" to="/projects"></md-tab>-->
-            <md-tab id="tab-about" md-label="About Me" @click="scrollMeTo('about')"></md-tab>
-            <md-tab id="tab-projects" md-label="Projects" @click="scrollMeTo('projects')"></md-tab>
-          </md-tabs>
+              <md-button @click="scrollMeTo('about')">About Me</md-button>
+              <md-button @click="scrollMeTo('projects')">Projects</md-button>
           </div>
         </div>
       </md-app-toolbar>
@@ -24,7 +20,7 @@
           <about></about>
         </section>
         <section ref="projects" id="projects">
-          <projects ></projects>
+          <projects></projects>
         </section>
         
       </md-app-content>
@@ -63,12 +59,6 @@ export default {
     'about': About,
     'projects': Projects
   },
-  created () {
-    window.addEventListener('scroll', this.onScroll);
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.onScroll);
-  },
   mounted () {
     console.log(window.location.hash.replace('#/', ''))
     this.scrollMeTo(window.location.hash.replace('#/', ''))
@@ -87,30 +77,11 @@ export default {
       })
       if (history.pushState) history.pushState(null, null, '#' + refName)
       else location.hash = '#' + refName
-    },
-    onScroll () {
-      if (this.timer !== null) clearTimeout(this.timer)
-      this.timer = setTimeout(() => {
-        const scrollPosition = document.documentElement.scrollTop
-        console.log(scrollPosition)
-        if (scrollPosition < this.sections[0].offsetTop) location.hash = "#"
-        else {
-          for (let i = 0; i < this.sections.length; i++) {
-            const sectionHeight = this.sections[i].offsetHeight
-            const sectionOffset = this.sections[i].offsetTop
-            if (scrollPosition > sectionOffset && scrollPosition < sectionOffset + sectionHeight) {
-              if (history.pushState) history.pushState(null, null, '#' + this.sections[i].id)
-              else location.hash = '#' + this.sections[i].id
-            }
-          }
-        }
-      }, 150)
     }
   },
   data: () => ({
     timer: null,
-    sections: document.getElementsByTagName('section'),
-    activeTab: 'null'
+    sections: document.getElementsByTagName('section')
   })
 }
 </script>
