@@ -1,5 +1,6 @@
 <template>
-  <div class="projects">
+  <div class="projects" style="padding-top: 100px;">
+    <h1 style="font-weight: 800; font-size: 30px; letter-spacing: 1px; text-align: center;">Projects</h1>
     <div class="md-layout">
       <div class="md-layout-item md-size-33 md-small-size-50 md-xsmall-size-100" v-for="project in projects" :key="project.name">
         <md-card md-with-hover style="cursor: default;">
@@ -105,6 +106,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+.projects {
+  min-height: 100vh;
+}
 .md-card {
   vertical-align: top;
   margin: 4px;

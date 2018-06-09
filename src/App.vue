@@ -1,27 +1,36 @@
 <template>
   <div id="app">
-    <md-app md-mode="fixed">
-      <md-app-toolbar class="md-primary md-elevation-5">
+    <md-app md-waterfall md-mode="fixed">
+      <md-app-toolbar class="md-primary">
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
-            <span class="md-title">Shahryar Parvez</span>
+            <span class="md-title" @click="scrollMeTo('hello')">Shahryar Parvez</span>
           </div>
           <div class="md-toolbar-section-end">
-            <md-tabs class="md-primary" md-sync-route>
-            <md-tab id="tab-about" md-label="About Me" to="/"></md-tab>
-            <md-tab id="tab-projects" md-label="Projects" to="/projects"></md-tab>
+            <md-tabs class="md-primary" :md-active-tab="activeTab">
+            <!--<md-tab id="tab-about" md-label="About Me" to="/"></md-tab>
+            <md-tab id="tab-projects" md-label="Projects" to="/projects"></md-tab>-->
+            <md-tab id="tab-about" md-label="About Me" @click="scrollMeTo('about')"></md-tab>
+            <md-tab id="tab-projects" md-label="Projects" @click="scrollMeTo('projects')"></md-tab>
           </md-tabs>
           </div>
         </div>
       </md-app-toolbar>
-      <md-app-content>
-        <transition :name="transitionName" mode="out-in">
-          <router-view style="margin-top: 50px;"/>
-        </transition>
+      <md-app-content style="padding: 0px;" id="content">
+        <section ref="hello" id="hello">
+          <hello></hello>
+        </section>
+        <section ref="about" id="about">
+          <about></about>
+        </section>
+        <section ref="projects" id="projects">
+          <projects ></projects>
+        </section>
+        
       </md-app-content>
     </md-app>
     <md-speed-dial md-direction="top" class="md-bottom-right md-fixed">
-      <md-speed-dial-target class="md-primary">
+      <md-speed-dial-target class="md-primary" @click="scrollMeTo('hello')">
         <md-icon class="md-morph-initial">expand_more</md-icon>
         <md-icon class="md-morph-final">expand_less</md-icon>
       </md-speed-dial-target>
@@ -44,15 +53,65 @@
 </template>
 
 <script>
+import Hello from './components/Hello'
+import About from './components/About'
+import Projects from './components/Projects'
 export default {
   name: 'app',
+  components: {
+    'hello': Hello,
+    'about': About,
+    'projects': Projects
+  },
+  created () {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.onScroll);
+  },
+  mounted () {
+    console.log(window.location.hash.replace('#/', ''))
+    this.scrollMeTo(window.location.hash.replace('#/', ''))
+  },
+  methods: {
+    scrollMeTo (refName) {
+      let element = this.$refs[refName]
+      let top = element.offsetTop
+      console.log(top)
+      if (refName === 'hello') top = 0
+
+      window.scroll({
+        top: top,
+        left: 0,
+        behavior: 'smooth'
+      })
+      if (history.pushState) history.pushState(null, null, '#' + refName)
+      else location.hash = '#' + refName
+    },
+    onScroll () {
+      if (this.timer !== null) clearTimeout(this.timer)
+      this.timer = setTimeout(() => {
+        const scrollPosition = document.documentElement.scrollTop
+        console.log(scrollPosition)
+        if (scrollPosition < this.sections[0].offsetTop) location.hash = "#"
+        else {
+          for (let i = 0; i < this.sections.length; i++) {
+            const sectionHeight = this.sections[i].offsetHeight
+            const sectionOffset = this.sections[i].offsetTop
+            if (scrollPosition > sectionOffset && scrollPosition < sectionOffset + sectionHeight) {
+              if (history.pushState) history.pushState(null, null, '#' + this.sections[i].id)
+              else location.hash = '#' + this.sections[i].id
+            }
+          }
+        }
+      }, 150)
+    }
+  },
   data: () => ({
-    transitionName: 'slide-left' // default
-  }),
-  // watch the `$route` to determine the transition to use
-  watch: {
-    '$route' (to) { this.transitionName = to.meta.transitionName }
-  }
+    timer: null,
+    sections: document.getElementsByTagName('section'),
+    activeTab: 'null'
+  })
 }
 </script>
 
@@ -76,38 +135,8 @@ export default {
   font-size: 40px;
 }
 
-.md-app { min-height: 100vh; }
-
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-left, .slide-right {
-  &-enter-active {
-    transition: all 1s ease;
-    will-change: all;
-  }
-  &-leave-active {
-    transition: all .5s ease;
-    will-change: all;
-  }
+.md-app {
+  //max-height: 100vh;
 }
 
-.slide-left {
-  &-enter {
-    transform: translateX(100vw);
-
-  }
-  &-leave-to {
-    transform: translateX(-100vw);
-  }
-}
-
-.slide-right {
-  &-enter {
-    transform: translateX(-100vw);
-
-  }
-  &-leave-to {
-    transform: translateX(100vw);
-  }
-}
 </style>
