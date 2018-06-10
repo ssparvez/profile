@@ -99,14 +99,12 @@ export default {
 
 #app { font-family: 'Raleway'; }
 
-#page-title {
-  margin-left: 16px; 
-  font-weight: 600; 
-  font-size: 40px;
-}
-
 .md-app {
   //max-height: 100vh;
 }
-.md-content { border: 0px; }
+.md-content { border: 0px !important; }
+
+.md-app-toolbar .md-button {
+  font-weight: 800 !important;
+}
 </style>

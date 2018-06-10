@@ -5,8 +5,8 @@
       <div class="md-layout-item md-size-33 md-small-size-50 md-xsmall-size-100" v-for="project in projects" :key="project.name">
         <md-card md-with-hover style="cursor: default;">
           <md-card-header>
-            <div class="md-title" style="font-weight: 500;"><a :href="project.mainURL" target="_blank">{{project.name}}</a></div>
-            <div class="md-subhead" style="font-weight: 600;">
+            <div class="md-title"><a :href="project.mainURL" target="_blank">{{project.name}}</a></div>
+            <div class="md-subhead" style="font-weight: 800;">
               <span v-for="(year, index) in project.years" :key="year">
                 {{(project.years.length > 1) && (index != (project.years.length - 1)) ? year + ", " : year}}
               </span>
