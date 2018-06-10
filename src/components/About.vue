@@ -11,7 +11,7 @@
             - Also - <br/><br/>
             Former Londoner and current New Yorker<br />
             Always supporting Liverpool FC and jamming to Tame Impala<br /><br />
-            <md-button v-bind:href="resume" target="_blank" class="md-accent md-raised">View Resume</md-button>
+            <md-button :href="resume" target="_blank" class="md-accent md-raised">View Resume</md-button>
           </div>
       </div>
     </div>  

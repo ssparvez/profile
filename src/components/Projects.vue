@@ -108,10 +108,12 @@ export default {
 <style lang="scss" scoped>
 .projects {
   min-height: 100vh;
+  background-color: #212121;
 }
 .md-card {
   vertical-align: top;
   margin: 4px;
+  background-color: #212121;
 }
 
 a { color: white !important; }

@@ -38,6 +38,8 @@ export default {
 <style lang="scss" scoped>
 .hello {
   min-height: 100vh;
+    background-color: #212121;
+
 }
 // hello world styles
 #hello-text {

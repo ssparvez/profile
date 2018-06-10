@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <md-app md-waterfall md-mode="fixed">
-      <md-app-toolbar class="md-primary">
+      <md-app-toolbar style="background-color: none;">
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
             <span class="md-title" @click="scrollMeTo('hello')">Shahryar Parvez</span>
@@ -22,7 +22,6 @@
         <section ref="projects" id="projects">
           <projects></projects>
         </section>
-        
       </md-app-content>
     </md-app>
     <md-speed-dial md-direction="top" class="md-bottom-right md-fixed">
@@ -109,5 +108,5 @@ export default {
 .md-app {
   //max-height: 100vh;
 }
-
+.md-content { border: 0px; }
 </style>
