@@ -60,7 +60,8 @@ export default {
   },
   mounted () {
     console.log(window.location.hash.replace('#/', ''))
-    this.scrollMeTo(window.location.hash.replace('#/', ''))
+    let refName = window.location.hash.replace('#/', '')
+    if (refName !== '') this.scrollMeTo(refName)
   },
   methods: {
     scrollMeTo (refName) {
@@ -107,4 +108,7 @@ export default {
 .md-app-toolbar .md-button {
   font-weight: 800 !important;
 }
+.fade-enter-active { transition: opacity 2s; }
+.fade-enter{ opacity: 0; }
+
 </style>
