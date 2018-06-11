@@ -1,6 +1,6 @@
 <template>
-  <div class="about" style="padding-top: 100px;">
-    <h1 style="font-weight: 800; font-size: 30px; letter-spacing: 1px; text-align: center;">About Me</h1>
+  <div class="about">
+    <h1 class="section-header">About Me</h1>
     <div class="md-layout md-alignment-center-center">
       <div class="md-layout-item">
           <div id="bio">
@@ -36,10 +36,6 @@ export default {
   min-height: 100vh;
   background-color: #FAFAFA;
   color: black;
-}
-
-.md-card {
-  margin-bottom: 20px;
 }
 
 #bio {

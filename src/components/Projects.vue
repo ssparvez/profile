@@ -1,10 +1,10 @@
 <template>
-  <div class="projects" style="padding-top: 100px;">
-    <h1 style="font-weight: 800; font-size: 30px; letter-spacing: 1px; text-align: center;">Projects</h1>
+  <div class="projects">
+    <h1 class="section-header">Projects</h1>
     <div class="md-layout">
       <div class="md-layout-item md-size-33 md-small-size-50 md-xsmall-size-100" v-for="project in projects" :key="project.name">
         <transition name="fade">
-          <md-card md-with-hover style="cursor: default;" v-show="project.loaded">
+          <md-card md-with-hover v-show="project.loaded">
             <md-card-header>
               <div class="md-title"><a :href="project.mainURL" target="_blank">{{project.name}}</a></div>
               <div class="md-subhead" style="font-weight: 800;">
@@ -17,7 +17,7 @@
               <img v-bind:src="'../static/images/' + project.image" alt="Project Image">
             </md-card-media>
             <md-card-media v-if="project.video">
-              <iframe style="width: 560px; height: 220px;" v-bind:src="project.video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe style="width: 560px; height: 220px;" :src="project.video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </md-card-media>
             <md-card-content>
               {{project.description}}
@@ -123,10 +123,14 @@ export default {
   background-color: #212121;
 }
 .md-card {
-  vertical-align: top;
-  margin: 4px;
+  margin: 10px;
   background-color: #212121;
+  cursor: default;
 }
 
 a { color: white !important; }
+
+// not sure why this transition isnt inherited from App.vue
+.fade-enter-active { transition: opacity 2s; }
+.fade-enter{ opacity: 0; }
 </style>

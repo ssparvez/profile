@@ -4,15 +4,15 @@
       <md-app-toolbar style="background-color: none;">
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
-            <span class="md-title" @click="scrollMeTo('hello')">Shahryar Parvez</span>
+            <span class="md-title" @click="scrollTo('hello')">Shahryar Parvez</span>
           </div>
           <div class="md-toolbar-section-end">
-              <md-button @click="scrollMeTo('about')">About Me</md-button>
-              <md-button @click="scrollMeTo('projects')">Projects</md-button>
+            <md-button @click="scrollTo('about')">About Me</md-button>
+            <md-button @click="scrollTo('projects')">Projects</md-button>
           </div>
         </div>
       </md-app-toolbar>
-      <md-app-content style="padding: 0px;" id="content">
+      <md-app-content style="padding: 0px;">
         <section ref="hello" id="hello">
           <hello></hello>
         </section>
@@ -25,7 +25,7 @@
       </md-app-content>
     </md-app>
     <md-speed-dial md-direction="top" class="md-bottom-right md-fixed">
-      <md-speed-dial-target class="md-primary" @click="scrollMeTo('hello')">
+      <md-speed-dial-target class="md-primary" @click="scrollTo('hello')">
         <md-icon class="md-morph-initial">expand_more</md-icon>
         <md-icon class="md-morph-final">expand_less</md-icon>
       </md-speed-dial-target>
@@ -51,6 +51,7 @@
 import Hello from './components/Hello'
 import About from './components/About'
 import Projects from './components/Projects'
+
 export default {
   name: 'app',
   components: {
@@ -59,30 +60,19 @@ export default {
     'projects': Projects
   },
   mounted () {
-    console.log(window.location.hash.replace('#/', ''))
-    let refName = window.location.hash.replace('#/', '')
-    if (refName !== '') this.scrollMeTo(refName)
+    let ref = window.location.hash.replace('#/', '')
+    if (ref !== '') this.scrollTo(ref)
   },
   methods: {
-    scrollMeTo (refName) {
-      let element = this.$refs[refName]
-      let top = element.offsetTop
+    scrollTo (ref) {
+      let top = ref === 'hello' ? 0 : this.$refs[ref].offsetTop
       console.log(top)
-      if (refName === 'hello') top = 0
-
-      window.scroll({
-        top: top,
-        left: 0,
-        behavior: 'smooth'
-      })
-      if (history.pushState) history.pushState(null, null, '#' + refName)
-      else location.hash = '#' + refName
+      window.scroll({ top, behavior: 'smooth' })
+      if (history.pushState) history.pushState(null, null, '#' + ref)
+      else location.hash = '#' + ref
     }
   },
-  data: () => ({
-    timer: null,
-    sections: document.getElementsByTagName('section')
-  })
+  data: () => ({ timer: null })
 }
 </script>
 
@@ -100,13 +90,16 @@ export default {
 
 #app { font-family: 'Raleway'; }
 
-.md-app {
-  //max-height: 100vh;
-}
+.md-app { /* max-height: 100vh; */ }
 .md-content { border: 0px !important; }
+.md-app-toolbar .md-button { font-weight: 800 !important; }
+section>div { padding-top: 100px; }
 
-.md-app-toolbar .md-button {
-  font-weight: 800 !important;
+.section-header {
+  font-weight: 800; 
+  font-size: 30px; 
+  letter-spacing: 1px; 
+  text-align: center;
 }
 .fade-enter-active { transition: opacity 2s; }
 .fade-enter{ opacity: 0; }

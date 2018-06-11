@@ -1,22 +1,22 @@
 <template>
-  <div class="hello" style="padding-top: 100px;">
+  <div class="hello">
     <transition name="fade">
       <div class="md-layout md-alignment-center-center" v-show="loaded">
         <div class="md-layout-item md-size-33 md-xsmall-size-100 md-small-size-50">
-          <img src="../assets/images/transparent.png" >
+          <img src="../assets/images/transparent.png" @load="didLoad">
         </div>
-        <div id="hello-text" style="margin-top: 50px;">
-              <span>{</span>
-              <div>
-                  <p>Hello,</p>
-                  <ul>
-                    <li>world!</li>
-                    <li>from New York!</li>
-                    <li>everybody!</li>
-                  </ul>
-              </div>
-              <span>}</span>
-            </div>
+        <div id="hello-text">
+          <span>{</span>
+          <div>
+            <p>Hello,</p>
+            <ul>
+              <li>world!</li>
+              <li>from New York!</li>
+              <li>everybody!</li>
+            </ul>
+          </div>
+          <span>}</span>
+        </div>
       </div>
     </transition>
   </div>
@@ -26,7 +26,7 @@
 // eslint-disable-next-line
 export default {
   name: 'Hello',
-  mounted () { this.loaded = true },
+  methods: { didLoad () { this.loaded = true } },
   data: () => ({
     resume: 'https://docs.google.com/document/d/1VfBw6bp036A3jHSbG1uLq2URkbuPRrR-W9Wq1TbmEWQ/edit?usp=sharing',
     loaded: false
@@ -38,8 +38,7 @@ export default {
 <style lang="scss" scoped>
 .hello {
   min-height: 100vh;
-    background-color: #212121;
-
+  background-color: #212121;
 }
 // hello world styles
 #hello-text {
@@ -47,37 +46,26 @@ export default {
   font-weight: 100;
 
   div {
-    vertical-align: middle;
     overflow: hidden;
     line-height: 40px;
     height: 40px;
     display: inline-grid;
-
-    p {
-      display: inline;
-      margin: 0;
-    }
+    margin: 0px;
+    
+    p, ul { margin: 0; }
 
     ul {
-      margin-top: 0;
       padding-left: 100px;
-      text-align: left;
       list-style: none;
       
       -webkit-animation: change 10s infinite;
       animation: change 10s infinite;
-
-      li {
-        line-height:40px;
-        margin: 0;
-      }
     }
   }
 
   span {
     color:#18FFFF;
     font-size: 42px;
-    line-height: 40px;
     vertical-align: middle;
     
     -webkit-animation: opacity 2s infinite;
@@ -98,10 +86,10 @@ export default {
 }
 
 @include keyframes(change) {
-  0%, 22%, 100% { transform: translate3d(0,-33.33%,0); }
-  25%, 47% { transform: translate3d(0,-66.67%,0); }
-  50%, 72% { transform: translate3d(0,-99.99%,0); }
-  75%,97% { transform: translate3d(0,-66.67%,0); }
+  0%, 22%, 100% { transform: translate3d(0, -33.33%, 0); }
+  25%, 47% { transform: translate3d(0, -66.67%, 0); }
+  50%, 72% { transform: translate3d(0, -99.99%, 0); }
+  75%, 97% { transform: translate3d(0, -66.67%, 0); }
   // 4 is the number of animation, there are 3 lines :
   // 1 to 2
   // 2 to 3
