@@ -3,7 +3,7 @@
     <transition name="fade">
       <div class="md-layout md-alignment-center-center" v-show="loaded">
         <div class="md-layout-item md-size-33 md-xsmall-size-100 md-small-size-50">
-          <img src="../assets/images/transparent.png" @load="didLoad">
+          <img src="../assets/images/me.png" @load="didLoad">
         </div>
         <div id="hello-text">
           <span>{</span>
