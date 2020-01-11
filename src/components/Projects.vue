@@ -16,7 +16,7 @@
               <div class="md-subhead" style="font-weight: 800;">{{project.years.join(", ")}}</div>
             </md-card-header>
             <md-card-media v-if="project.image" md-ratio="16:9">
-              <img v-bind:src="'../static/images/' + project.image" alt="Project Image" />
+              <img v-bind:src="'../static/images/projects/' + project.image" alt="Project Image" />
             </md-card-media>
             <md-card-media v-if="project.video">
               <iframe

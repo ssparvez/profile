@@ -30,12 +30,16 @@
         <md-icon class="md-morph-final">expand_less</md-icon>
       </md-speed-dial-target>
       <md-speed-dial-content>
-        <md-button class="md-icon-button" href="https://www.linkedin.com/in/syed-shahryar-parvez-560b6a93" target="_blank">
-          <img src="./assets/images/LinkedIn.png">
+        <md-button
+          class="md-icon-button"
+          href="https://www.linkedin.com/in/syed-shahryar-parvez-560b6a93"
+          target="_blank"
+        >
+          <img src="../static/images/other/LinkedIn.png" />
           <md-tooltip md-direction="left">LinkedIn</md-tooltip>
         </md-button>
         <md-button class="md-icon-button" href="https://github.com/ssparvez" target="_blank">
-          <img src="./assets/images/GitHub.png">
+          <img src="../static/images/other/GitHub.png" />
           <md-tooltip md-direction="left">GitHub</md-tooltip>
         </md-button>
         <md-button class="md-icon-button" href="mailto:shhrrparvez@gmail.com">
@@ -48,60 +52,78 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
-import About from './components/About'
-import Projects from './components/Projects'
+import Hello from "./components/Hello";
+import About from "./components/About";
+import Projects from "./components/Projects";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    'hello': Hello,
-    'about': About,
-    'projects': Projects
+    hello: Hello,
+    about: About,
+    projects: Projects
   },
-  mounted () {
-    let ref = window.location.hash.replace('#/', '')
-    if (ref !== '') this.scrollTo(ref)
+  mounted() {
+    let ref = window.location.hash.replace("#/", "");
+    if (ref !== "") this.scrollTo(ref);
   },
   methods: {
-    scrollTo (ref) {
-      let top = ref === 'hello' ? 0 : this.$refs[ref].offsetTop
-      console.log(top)
-      window.scroll({ top, behavior: 'smooth' })
-      if (history.pushState) history.pushState(null, null, '#' + ref)
-      else location.hash = '#' + ref
+    scrollTo(ref) {
+      let top = ref === "hello" ? 0 : this.$refs[ref].offsetTop;
+      console.log(top);
+      window.scroll({ top, behavior: "smooth" });
+      if (history.pushState) history.pushState(null, null, "#" + ref);
+      else location.hash = "#" + ref;
     }
   },
   data: () => ({ timer: null })
-}
+};
 </script>
 
 <!-- Global styles can go here -->
 <style lang="scss">
 @import "~vue-material/dist/theme/engine"; // Import the theme engine
 
-@include md-register-theme("default", (
-  primary: md-get-palette-color(indigo, A700), // The primary color of your application
-  accent: md-get-palette-color(cyan, A200), // The accent or secondary color
-  theme: dark // This can be dark or light
-));
+@include md-register-theme(
+  "default",
+  (
+    primary: md-get-palette-color(indigo, A700),
+    // The primary color of your application
+      accent: md-get-palette-color(cyan, A200),
+    // The accent or secondary color
+      theme: dark // This can be dark or light
+  )
+);
 
 @import "~vue-material/dist/theme/all"; // Apply the theme
 
-#app { font-family: 'Raleway'; }
+#app {
+  font-family: "Raleway";
+}
 
-.md-app { /* max-height: 100vh; */ }
-.md-content { border: 0px !important; }
-.md-app-toolbar .md-button { font-weight: 800 !important; }
-section>div { padding-top: 100px; }
+.md-app {
+  /* max-height: 100vh; */
+}
+.md-content {
+  border: 0px !important;
+}
+.md-app-toolbar .md-button {
+  font-weight: 800 !important;
+}
+section > div {
+  padding-top: 100px;
+}
 
 .section-header {
-  font-weight: 800; 
-  font-size: 30px; 
-  letter-spacing: 1px; 
+  font-weight: 800;
+  font-size: 30px;
+  letter-spacing: 1px;
   text-align: center;
 }
-.fade-enter-active { transition: opacity 2s; }
-.fade-enter{ opacity: 0; }
-
+.fade-enter-active {
+  transition: opacity 2s;
+}
+.fade-enter {
+  opacity: 0;
+}
 </style>
