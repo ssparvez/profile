@@ -36,14 +36,14 @@
 <script>
 // eslint-disable-next-line
 export default {
-  name: "About",
-  data() {
+  name: 'About',
+  data () {
     return {
       resume:
-        "https://docs.google.com/document/d/1VfBw6bp036A3jHSbG1uLq2URkbuPRrR-W9Wq1TbmEWQ/edit?usp=sharing"
-    };
+        'https://docs.google.com/document/d/1VfBw6bp036A3jHSbG1uLq2URkbuPRrR-W9Wq1TbmEWQ/edit?usp=sharing'
+    }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

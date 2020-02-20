@@ -25,18 +25,18 @@
 <script>
 // eslint-disable-next-line
 export default {
-  name: "Hello",
+  name: 'Hello',
   methods: {
-    didLoad() {
-      this.loaded = true;
+    didLoad () {
+      this.loaded = true
     }
   },
   data: () => ({
     resume:
-      "https://docs.google.com/document/d/1VfBw6bp036A3jHSbG1uLq2URkbuPRrR-W9Wq1TbmEWQ/edit?usp=sharing",
+      'https://docs.google.com/document/d/1VfBw6bp036A3jHSbG1uLq2URkbuPRrR-W9Wq1TbmEWQ/edit?usp=sharing',
     loaded: false
   })
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

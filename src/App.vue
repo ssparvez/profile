@@ -52,32 +52,32 @@
 </template>
 
 <script>
-import Hello from "./components/Hello";
-import About from "./components/About";
-import Projects from "./components/Projects";
+import Hello from './components/Hello'
+import About from './components/About'
+import Projects from './components/Projects'
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     hello: Hello,
     about: About,
     projects: Projects
   },
-  mounted() {
-    let ref = window.location.hash.replace("#/", "");
-    if (ref !== "") this.scrollTo(ref);
+  mounted () {
+    let ref = window.location.hash.replace('#/', '')
+    if (ref !== '') this.scrollTo(ref)
   },
   methods: {
-    scrollTo(ref) {
-      let top = ref === "hello" ? 0 : this.$refs[ref].offsetTop;
-      console.log(top);
-      window.scroll({ top, behavior: "smooth" });
-      if (history.pushState) history.pushState(null, null, "#" + ref);
-      else location.hash = "#" + ref;
+    scrollTo (ref) {
+      let top = ref === 'hello' ? 0 : this.$refs[ref].offsetTop
+      console.log(top)
+      window.scroll({ top, behavior: 'smooth' })
+      if (history.pushState) history.pushState(null, null, '#' + ref)
+      else location.hash = '#' + ref
     }
   },
   data: () => ({ timer: null })
-};
+}
 </script>
 
 <!-- Global styles can go here -->
