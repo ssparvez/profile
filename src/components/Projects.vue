@@ -100,7 +100,7 @@ export default {
         mainURL: "https://ssparvez.github.io/cryptofy/",
         codeURL: "https://github.com/ssparvez/cryptofy",
         description:
-          "A mobile app that tracks the prices and latest news on top cryptocurrencies with the coinmarketcap API. It uses the Ionic Framework with Angular and Firebase.",
+          "A mobile app that tracks the prices and latest news on top cryptocurrencies with the coinmarketcap API. Built on Ionic with Angular and Firebase.",
         loaded: false
       },
       {

@@ -111,7 +111,7 @@ export default {
   font-weight: 800 !important;
 }
 section > div {
-  padding-top: 100px;
+  padding: 60px 0px;
 }
 
 .section-header {
