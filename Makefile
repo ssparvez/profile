@@ -1,3 +1,5 @@
+prod: build copy deploy
+
 build:
 	npm run build
 
@@ -8,5 +10,3 @@ deploy:
 	git -C ../prod add .   
 	git -C ../prod commit -am "updates"
 	git -C ../prod push
-
-prod: build copy deploy
