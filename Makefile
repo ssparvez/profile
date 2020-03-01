@@ -1,6 +1,6 @@
-prod: build copy deploy
+prod: build_vue copy deploy
 
-build:
+build_vue:
 	npm run build
 
 copy:
