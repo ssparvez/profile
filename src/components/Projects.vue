@@ -80,7 +80,7 @@ export default {
       {
         name: 'Jotter',
         years: [2020],
-        mainURL: 'https://thejotter.xyz',
+        mainURL: 'http://thejotter.xyz',
         codeURL: 'https://github.com/ssparvez/jotter',
         image: 'jotter.png',
         description:
